@@ -55,8 +55,20 @@
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>4.2.3</version>
                 <configuration>
-                    <skip>true</skip>
+                    <skip>false</skip>
+                    <effort>Max</effort>
+                    <threshold>Low</threshold>
+                    <xmlOutput>true</xmlOutput>
+                    <failOnError>true</failOnError>
                 </configuration>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <!-- OWASP Dependency-Check Maven Plugin pour analyser les dépendances (SCA) -->
